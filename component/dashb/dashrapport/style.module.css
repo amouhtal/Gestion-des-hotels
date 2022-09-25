@@ -1,0 +1,70 @@
+.dashRapport {
+  width: 100%;
+}
+
+.leftPanel {
+  width: 700px;
+  margin: 40px auto;
+}
+
+.rightPanel {
+  /* display: flex; */
+  width: 700px;
+  margin: 40px auto;
+}
+
+.panels{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin: auto;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  display: inline;
+  border-radius: 4px;
+}
+
+
+.logo svg {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  color: white;
+  padding: 20px;
+}
+
+.icon1 {
+  background: linear-gradient(60deg, #26c6da, #00acc1);
+}
+.icon2 {
+  background: linear-gradient(60deg, #66bb6a, #43a047);
+}
+.icon3 {
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+}
+.icon4 {
+  background: linear-gradient(60deg, #ef5350, #e53935);
+}
+
+
+@media (max-width:1280px) {
+  .panels{
+    grid-template-columns: 1fr 1fr;
+
+  }
+}
+
+@media (max-width:650px) {
+  .panels{
+    grid-template-columns: 1fr;
+  }
+}

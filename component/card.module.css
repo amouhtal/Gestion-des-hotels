@@ -1,0 +1,59 @@
+
+.card {
+    position: relative;
+    margin: 5px;
+    height: 150px;
+    
+    background-color: #fff;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 14%);
+    border-radius: 6px;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 0.875rem;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    display: inline;
+    border-radius: 4px;
+}
+
+
+.card p,
+.card h3 {
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+}
+
+.card p {
+  color: #999;
+  font-size: 14px;
+}
+.card h3 {
+  top: 20px;
+  color: #3c4858;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1.4em;
+  font-size: 25.55px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card small {
+  color: #777;
+  font-size: 65%;
+  font-weight: 400;
+  line-height: 1;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  left: 10%;
+  width: 80%;
+  border-bottom: 0.02px solid rgb(222, 219, 219);
+}

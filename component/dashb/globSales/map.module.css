@@ -1,0 +1,88 @@
+.region {
+  position: absolute;
+  font-size: 16px;
+  color: black;
+  left: 40px;
+}
+
+.svgF {
+}
+
+.svgF path {
+  fill: rgb(231, 231, 231);
+  transform : scale(0.5 0.5)
+}
+
+.svgF {
+  fill-opacity: 1;
+  stroke: rgb(236, 136, 136);
+  stroke-opacity: 1;
+  stroke-width: 0.5;
+  position: absolute;
+  left: 25%;
+  width: auto;
+  height: 100%;
+  fill: rgb(231, 231, 231);
+}
+
+.svgF path:nth-child(n + 1):hover {
+  fill: rgb(75, 72, 72);
+}
+
+.svgF path:nth-child(8),
+.svgF path:nth-child(9),
+.svgF path:nth-child(12),
+.svgF path:nth-child(14) {
+  fill: #9e9e9e;
+}
+
+.svgF path:nth-child(1) {
+  fill: rgb(86, 86, 86);
+}
+
+.svgF path:nth-child(2),
+.svgF path:nth-child(3),
+.svgF path:nth-child(4) {
+  fill: rgb(86, 86, 86);
+  transform : scale(0.5 0.5)
+
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

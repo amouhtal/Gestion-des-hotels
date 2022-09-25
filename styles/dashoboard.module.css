@@ -1,0 +1,88 @@
+
+
+.dashboard{
+    padding: 3%;
+    width: 100%;
+    height: 100vh;
+}
+
+.dashboardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.dashCards
+{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    flex-wrap: wrap;
+    background-color: aqua;
+}
+
+.dashCard{
+    width: 14%;
+    height: 95%;
+    background-color: rgb(107, 107, 107);
+    margin: 10px;
+
+}
+
+.cardHead{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #20a8d8;
+    height: 20%;
+    font: bold;
+}
+
+.cardBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    background-color: white;
+}
+
+.cardFooter{
+    display: flex;
+    height: auto;
+    border: 1px solid #d1d4d7;
+    background-color: white;
+    height: 20%;
+}
+
+.cardFooter .left{
+    width: 50%;
+    height: 100%;
+    border: 1px solid #d1d4d7;
+
+}
+
+.cardFooter .right{
+    width: 50%;
+    height: 100%;
+    border: 1px solid #d1d4d7;
+
+}
+
+.factureGaph{
+    margin: 30px;
+    background-color: cadetblue;
+    width: 100%;
+    height:45%;
+    /* background-image: url('https://static.anychart.com/images/gallery/v8/column-charts-column-chart.png') ; */
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.factureChart{
+
+}
+ 

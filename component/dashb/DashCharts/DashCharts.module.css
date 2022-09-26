@@ -1,0 +1,7 @@
+.DashCharts {
+	display: grid;
+	width: 100%;
+	border: 1px solid red;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 200px;
+}

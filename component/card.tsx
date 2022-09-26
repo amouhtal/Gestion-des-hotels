@@ -9,6 +9,7 @@ const Card = (props: any) => {
     return (
         <div className={styles.card}>
                 {props.children}
+                
         </div>
     )
 }

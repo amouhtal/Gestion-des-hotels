@@ -7,16 +7,19 @@ import { ThemeProvider } from "@mui/material/styles";
 import styles from "../styles/conatiner.module.css";
 import PrimarySearchAp from "../component/navbar/navbar";
 import React, { useState } from "react";
+import {ThemeContextProvider} from '../contexts/BarContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [open, setOpen] = useState(false);
   return (
       <div className={`debug ${styles.conatiner}`}>
-        <Rightbar />
-        <div className={styles.rightSide}>
-          <PrimarySearchAp />
-          <Component {...pageProps} />
-        </div>
+        <ThemeContextProvider>
+          <Rightbar />
+            <div className={styles.rightSide}>
+              <PrimarySearchAp />
+              <Component {...pageProps} />
+            </div>
+        </ThemeContextProvider>
       </div>
   );
 }

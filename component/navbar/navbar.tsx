@@ -10,18 +10,19 @@ import { SvgIcon } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import PersonIcon from "@mui/icons-material/Person";
-import { useState } from "react";
-import ListIcon from "@mui/icons-material/List";
-import { useRef } from "react";
+import { useState, useContext  } from "react";
+import { ThemeContext } from "../../contexts/BarContext";
+
+
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
+  // const bClicked = useContext(ClickedContext);
+
+  const {dark,  toggleDark } = useContext(ThemeContext);
 
   const handClick = () => {
-    click ? setClick(false) : setClick(true);
-
-    // leftBarHandClick(click);
-    console.log(click);
+    toggleDark();
   };
 
   return (

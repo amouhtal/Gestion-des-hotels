@@ -1,19 +1,23 @@
 import React, { useRef } from "react";
 import styles from "../../styles/Rightbar.module.css";
 import DropDlist from "../droplist/droplist";
+import { useState, useContext  } from "react";
+import { ThemeContext } from "../../contexts/BarContext";
 
 const Rightbar = () => {
   // let navRef = useRef(null);
 
+  const {dark,  toggleDark } = useContext(ThemeContext);
+
   return (
     <div
-      className={styles.rightbar}
-    //   style={{
-    //     position: "relative",
-    //     width: open ? "16rem" : "6rem",
-    //     // width: "30rem",
-    //     transition: "all 0.3s ease",
-    //   }}
+
+       className={`${
+        dark
+          ? styles.rightbar && styles.displaynone
+          : styles.rightbar
+      }` 
+    }
     >
       <div className={styles.logo}>
         <h2 style={{ color: "#fff", textAlign: "center" }}>Delta Factures</h2>

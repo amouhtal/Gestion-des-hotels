@@ -6,20 +6,27 @@ import theme from "../component/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import styles from "../styles/conatiner.module.css";
 import PrimarySearchAp from "../component/navbar/navbar";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {ThemeContextProvider} from '../contexts/BarContext';
+import { ThemeContext } from "../contexts/BarContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [open, setOpen] = useState(false);
+  const {dark,  toggleDark } = useContext(ThemeContext);
+
   return (
-      <div className={`debug ${styles.conatiner}`}>
+      <div
+        className= {
+          dark ?   `${styles.conatiner} ${styles.childBar}`
+          : styles.conatiner
+        }
+      >
         <ThemeContextProvider>
           <Rightbar />
             <div className={styles.rightSide}>
               <PrimarySearchAp />
               <Component {...pageProps} />
             </div>
-        </ThemeContextProvider>
+          </ThemeContextProvider>
       </div>
   );
 }

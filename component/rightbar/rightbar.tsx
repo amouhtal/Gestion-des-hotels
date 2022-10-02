@@ -12,11 +12,11 @@ const Rightbar = () => {
   return (
     <div
 
-       className={`${
+       className={
         dark
-          ? styles.rightbar && styles.displaynone
+          ? `${styles.rightbar} ${styles.displaynone}`
           : styles.rightbar
-      }` 
+      
     }
     >
       <div className={styles.logo}>
@@ -31,8 +31,9 @@ const Rightbar = () => {
           <p>User Name</p>
         </div>
       </div>
-      {/* <h5 style={{ color: '#fff', textAlign: 'center' }} >MENU D'ADMINISTRATION</h5> */}
+
       <div className={styles.menu}>
+        
         <ul className={styles.listItems}>
           <DropDlist />
         </ul>

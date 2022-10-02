@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-
 import styles from "../../styles/dropdownlist.module.css";
 import { droplist } from "../rightbar/dropdownlist";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faSortDown } from "@fortawesome/free-solid-svg-icons";
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import SvgIcon from "@mui/icons-material/Dashboard";
 
 const DropDlist = () => {
   const [active, setActive] = useState(-1);
@@ -22,10 +21,14 @@ const DropDlist = () => {
                 });
               }}
             >
+              {
+              index == 0 ? <SvgIcon component={DashboardIcon}
+                inheritViewBox
+                className={`${styles.icons} ${styles.dashIcon}`}
+                /> :
               <FontAwesomeIcon icon={elmnt.icon} className={styles.icons} />
-              <span>
-                {elmnt.title}
-              </span>
+              }
+              <span>{elmnt.title}</span>
               <FontAwesomeIcon
                 icon={elmnt.downicon}
                 className={styles.icons2}
@@ -40,11 +43,12 @@ const DropDlist = () => {
             >
               {elmnt.sublist.map((subel, index1) => {
                 return (
-                  <li className={styles.options} key={index1}>
-                    <a href={"http://localhost:3000/client/" + subel.title}>
-                      {subel.title}
-                    </a>
-                  </li>
+                  <a
+                    href={"http://localhost:3000/client/" + subel.title}
+                    key={index1}
+                  >
+                    <li className={styles.options}>{subel.title}</li>
+                  </a>
                 );
               })}
             </ul>

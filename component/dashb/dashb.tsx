@@ -1,18 +1,23 @@
+import { useEffect, useState } from "react";
+import styles from "../../styles/dashb.module.css";
+import DashCharts from "./DashCharts/DashCharts";
+import DashRapport from "./dashrapport/dashrapport";
+import Glob from "./globSales/glob";
 
-import styles from '../../styles/dashb.module.css'
-import DashCharts from './DashCharts/DashCharts';
-import DashRapport from './dashrapport/dashrapport';
-import Glob from './globSales/glob';
+const Dashb = () => {
+    const [DashCharts_, changeDash] = useState<any>()
 
-const Dashb = () =>
-{
-    return (
-        <div className={styles.dashb}>
-            <DashRapport/>
-            <Glob/>
-            <DashCharts />
-        </div>
-    )
-}
+    useEffect(()=>{
+        changeDash(<DashCharts/>)
+    },[])
+    console.log("typeof window")
+  return (
+    <div className={styles.dashb}>
+      <DashRapport />
+      <Glob />
+      <DashCharts/>
+    </div>
+  );
+};
 
 export default Dashb;

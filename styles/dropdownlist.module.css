@@ -18,9 +18,11 @@
 
 }
 
+
 .menuuLa{
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: Roboto,Helvetica,Arial,sans-serif;
     width: 100%;
     font-size: 14px;
@@ -28,6 +30,11 @@
     -webkit-font-smoothing: antialiased;
     padding: 10px;
     
+}
+
+.menuul:first-child
+{
+    background-color: rgb(2,172,193);
 }
 
 .menuuLa:hover{
@@ -55,7 +62,7 @@
 
 .active::before{
     content: '';
-    margin-left: 850px;
+    /* margin-left: 850px; */
 }
 
 .menuulliulli
@@ -93,6 +100,15 @@
 .icons{
     width: 24px;
     height: 16px;
+}
+
+.dashIcon{
+    width: 24px;
+    height: 26px;
+}
+
+.icons:nth-child(2n + 0){
+    background-color: aqua;
 }
 
 .icons2{

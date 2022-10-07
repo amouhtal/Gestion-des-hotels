@@ -1,0 +1,28 @@
+.chart1 {
+  position: absolute;
+  width: 92%;
+  height: 65%;
+  top: -20px;
+  margin: 0 4%;
+}
+.chart1 svg {
+  transition: 0.3s transform linear;
+  -webkit-transition: transform 0.5s linear;
+}
+.chart1 svg:hover {
+  transform: translateY(-10%);
+}
+.chart1 svg {
+  border-radius: 5px;
+}
+
+.chart1 h4{
+    font-size: 18px;
+    font-weight: 300;
+    color: #3C4858;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    margin-bottom: 3px;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+
+}

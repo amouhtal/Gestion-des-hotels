@@ -10,7 +10,6 @@ const Dashb = () => {
     useEffect(()=>{
         changeDash(<DashCharts/>)
     },[])
-    console.log("typeof window")
   return (
     <div className={styles.dashb}>
       <DashRapport />

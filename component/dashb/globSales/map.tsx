@@ -6,34 +6,36 @@ const Map = () => {
   const [region, setRegion] = useState("");
 
   let Regions = [
-    {id:"MA-01", region: "Tanger-Tétouan" },
-    {id:"MA-02", region: "Gharb-Chrarda-Beni Hssen" },
-    {id:"MA-03", region: "Taza-Al Hoceima-Taounate"},
-    {id:"MA-04", region: "L'Oriental"},
-    {id:"MA-05", region: "Fès-Boulemane"},
-    {id:"MA-06", region: "Meknès-Tafilalet"},
-    {id:"MA-07", region: "Rabat-Salé-Zemmour-Zaer"},
-    {id:"MA-08", region: "Grand Casablanca"},
-    {id:"MA-09", region: "Chaouia-Ouardigha"},
-    {id:"MA-10", region: "Doukhala-Abda"},
-    {id:"MA-11", region: "Marrakech-Tensift-Al Haouz"},
-    {id:"MA-12", region: "Tadla-Azilal"},
-    {id:"MA-13", region: "Souss-Massa-Drâa"},
-    {id:"MA-14", region: "Laâyoune-Boujdour-Sakia el Hamra"},
-    {id:"MA-15", region: "Guelmim-Es Smara"},
-    {id:"MA-16", region: "Oued ed Dahab-Lagouira"},
+    { id: "MA-01", region: "Tanger-Tétouan" },
+    { id: "MA-02", region: "Gharb-Chrarda-Beni Hssen" },
+    { id: "MA-03", region: "Taza-Al Hoceima-Taounate" },
+    { id: "MA-04", region: "L'Oriental" },
+    { id: "MA-05", region: "Fès-Boulemane" },
+    { id: "MA-06", region: "Meknès-Tafilalet" },
+    { id: "MA-07", region: "Rabat-Salé-Zemmour-Zaer" },
+    { id: "MA-08", region: "Grand Casablanca" },
+    { id: "MA-09", region: "Chaouia-Ouardigha" },
+    { id: "MA-10", region: "Doukhala-Abda" },
+    { id: "MA-11", region: "Marrakech-Tensift-Al Haouz" },
+    { id: "MA-12", region: "Tadla-Azilal" },
+    { id: "MA-13", region: "Souss-Massa-Drâa" },
+    { id: "MA-14", region: "Laâyoune-Boujdour-Sakia el Hamra" },
+    { id: "MA-15", region: "Guelmim-Es Smara" },
+    { id: "MA-16", region: "Oued ed Dahab-Lagouira" },
   ];
 
   const showDiv = (e: any) => {
     let currentRegion;
     let currentId: Number = e.target.id;
     e.preventDefault();
-    let index = Regions.findIndex((region => {
+    let index = Regions.findIndex((region) => {
       return region.id == currentId.toString();
-    }))
-    // document.addEventListener("DOMContentLoaded", function(event) {
-    //Your code
-    console.log(e.target.id);
+    })
+    // (
+    //   // document.addEventListener("DOMContentLoaded", function(event) {
+    //   //Your code
+    //   e.target.id
+    // );
 
     currentRegion = Regions[index].region.toString();
     setRegion(currentRegion);

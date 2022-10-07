@@ -5,6 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import SvgIcon from "@mui/icons-material/Dashboard";
 
+
+// ${<SvgIcon component={DashboardIcon}
+//                 inheritViewBox
+//                 className={`${styles.icons} ${styles.dashIcon}`}
+//                 />} ${<span>{elmnt.title}</span>}
+				
 const DropDlist = () => {
   const [active, setActive] = useState(-1);
   return (
@@ -22,17 +28,25 @@ const DropDlist = () => {
               }}
             >
               {
-              index == 0 ? <SvgIcon component={DashboardIcon}
-                inheritViewBox
-                className={`${styles.icons} ${styles.dashIcon}`}
-                /> :
-              <FontAwesomeIcon icon={elmnt.icon} className={styles.icons} />
-              }
-              <span>{elmnt.title}</span>
-              <FontAwesomeIcon
-                icon={elmnt.downicon}
-                className={styles.icons2}
-              />
+              index == 0 ? 
+			  	<>
+				<SvgIcon component={DashboardIcon}
+					inheritViewBox
+					className={'${styles.icons} ${styles.dashIcon}'}
+					/> <span>{elmnt.title}</span> 
+				</>:
+				<> 
+				<FontAwesomeIcon  icon={elmnt.icon} className={styles.icons} />
+					<span>{elmnt.title}</span>
+					<FontAwesomeIcon
+						icon={elmnt.downicon}
+						className={styles.icons2}
+					/>
+				</>
+			  }
+              
+              
+              
             </a>
             <ul
               className={`${

@@ -1,10 +1,10 @@
-import { faUser, faFileArchive, faTags, faUserGroup, faPen,faSortDown } from '@fortawesome/free-solid-svg-icons'
+import {faUser, faFileArchive, faTags, faUserGroup, faPen,faSortDown } from '@fortawesome/free-solid-svg-icons'
 
 export const droplist =[
     {
         title : "Dashboard",
-        icon: "",
-        downicon: "",
+        icon: faUser,
+        downicon: faUser,
         sublist : []
     },
      {

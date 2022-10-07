@@ -1,23 +1,21 @@
 import React, { useRef } from "react";
 import styles from "../../styles/Rightbar.module.css";
 import DropDlist from "../droplist/droplist";
-import { useState, useContext  } from "react";
-import { ThemeContext } from "../../contexts/BarContext";
+import { useAtom } from "jotai";
+import { toggleNav } from "../../contexts/atoms";
+import { leftBarBackColot } from "../../contexts/atoms";
 
 const Rightbar = () => {
-  // let navRef = useRef(null);
-
-  const {dark,  toggleDark } = useContext(ThemeContext);
+  const [toggle, setToggle] = useAtom(toggleNav);
+  const [Rt_Bg_Clr, setRt_Bg_Clr] = useAtom(leftBarBackColot);
 
   return (
     <div
-
-       className={
-        dark
-          ? `${styles.rightbar} ${styles.displaynone}`
-          : styles.rightbar
-      
-    }
+      className={
+        toggle ? `${styles.rightbar} ${styles.displaynone}` : styles.rightbar
+      }
+      //   style={{background-image: "blue"}}
+      style={{ backgroundImage: Rt_Bg_Clr}}
     >
       <div className={styles.logo}>
         <h2 style={{ color: "#fff", textAlign: "center" }}>Delta Factures</h2>
@@ -33,7 +31,6 @@ const Rightbar = () => {
       </div>
 
       <div className={styles.menu}>
-        
         <ul className={styles.listItems}>
           <DropDlist />
         </ul>

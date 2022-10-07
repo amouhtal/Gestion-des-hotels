@@ -1,7 +1,6 @@
 import styles from "../../styles/navbar.module.css";
 import {
   faList,
-  faBars,
   faEllipsisVertical,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
@@ -10,27 +9,23 @@ import { SvgIcon } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import PersonIcon from "@mui/icons-material/Person";
-import { useState, useContext  } from "react";
-import { ThemeContext } from "../../contexts/BarContext";
-
-
+import { toggleNav } from "../../contexts/atoms";
+import { useAtom } from "jotai";
 
 const Navbar = () => {
-  const [click, setClick] = useState(false);
-  // const bClicked = useContext(ClickedContext);
-
-  const {dark,  toggleDark } = useContext(ThemeContext);
+  const [toggle, setToggle] = useAtom(toggleNav);
 
   const handClick = () => {
-    toggleDark();
+    setToggle(!toggle);
+    "---->", toggle;
   };
 
   return (
-    <div className={styles.navbar} >
+    <div className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.left}>
           <button onClick={handClick}>
-            {!click ? (
+            {!toggle ? (
               <FontAwesomeIcon
                 icon={faEllipsisVertical}
                 className={styles.icon}

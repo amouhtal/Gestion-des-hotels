@@ -45,7 +45,6 @@ export default function UpdateFields() {
     
       let  data = {id: Number(id), nomDuContact: contactName,"societe": societe,"webSiteUrl": website,"numIce": numICE,"telephone": phone,"email": Email,"adresse1": Adress} 
 
-      console.log(data);
     
 
   

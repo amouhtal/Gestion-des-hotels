@@ -1,4 +1,3 @@
-
 .card {
     position: relative;
     margin: 5px;
@@ -8,6 +7,16 @@
     border-radius: 6px;
     color: rgba(0, 0, 0, 0.87);
     font-size: 0.875rem;
+}
+
+.card:after{
+  display: block;
+  content: '';
+  width: 90%;
+  margin: 0 5%;
+  border-top: 0.02px solid rgb(120, 120, 126);
+
+  background-color: aliceblue;
 }
 
 .logo {
@@ -55,4 +64,22 @@
   left: 10%;
   width: 80%;
   border-bottom: 0.02px solid rgb(222, 219, 219);
+}
+
+.icon{
+  position: absolute;
+  color: rgb(201, 201, 207);
+  width: 15px;
+  height: 15px;
+  bottom: 5%;
+  left: 20%;
+}
+
+.card p{
+  position: absolute;
+  color: rgb(201, 201, 207);
+  /* width: 15px; */
+  height: 15px;
+  bottom: 1%;
+  left: 25%;
 }

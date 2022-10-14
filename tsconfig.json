@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.jsx", "component/rightbar/dropdownlist.tsx", "component/droplist/droplist.tsx", "pages/client/Ajouter/index.js", "pages/client/update/[id].js", "contexts/BarContext.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.jsx", "component/rightbar/dropdownlist.tsx", "component/droplist/droplist.tsx", "pages/client/Ajouter/index.js", "pages/client/update/[id].js", "contexts/BarContext.tsx", "component/dashb/DashCharts/Chart3.tsx"],
   "exclude": ["node_modules"]
 }

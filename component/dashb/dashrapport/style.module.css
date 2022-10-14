@@ -59,12 +59,5 @@
 @media (max-width:1280px) {
   .panels{
     grid-template-columns: 1fr 1fr;
-
-  }
-}
-
-@media (max-width:650px) {
-  .panels{
-    grid-template-columns: 1fr;
   }
 }

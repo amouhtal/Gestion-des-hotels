@@ -6,7 +6,7 @@ const Card = (props: any) => {
   return (
     <div
       className={styles.card}
-      style={{ width: `${props.width}px`, height: `${props.height}px` }}
+      style={{ width: `${props.width}%`, height: `${props.height}%` }}
     >
       {props.children}
       <SvgIcon

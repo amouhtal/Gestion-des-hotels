@@ -7,6 +7,7 @@
     border-radius: 6px;
     color: rgba(0, 0, 0, 0.87);
     font-size: 0.875rem;
+
 }
 
 .card:after{
@@ -15,7 +16,6 @@
   width: 90%;
   margin: 0 5%;
   border-top: 0.02px solid rgb(120, 120, 126);
-
   background-color: aliceblue;
 }
 
@@ -29,7 +29,6 @@
     border-radius: 4px;
 }
 
-
 .card p,
 .card h3 {
   position: absolute;
@@ -41,6 +40,7 @@
   color: #999;
   font-size: 14px;
 }
+
 .card h3 {
   top: 20px;
   color: #3c4858;
@@ -78,8 +78,9 @@
 .card p{
   position: absolute;
   color: rgb(201, 201, 207);
-  /* width: 15px; */
   height: 15px;
-  bottom: 1%;
+  bottom: 5%;
   left: 25%;
+  padding: 0;
+  margin: 0 0 0 10px;
 }

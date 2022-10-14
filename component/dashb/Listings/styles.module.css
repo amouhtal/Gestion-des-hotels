@@ -1,0 +1,44 @@
+.listing {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.listingCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0;
+  height: 350px;
+  gap: 2%;
+}
+
+.RegionPic {
+  position: absolute;
+  width: 70%;
+  height: 85%;
+
+  top: -20px;
+  left: 15%;
+}
+
+.RegionPic img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  transition: 0.3s transform linear;
+  -webkit-transition: transform 0.5s linear;
+}
+
+.RegionPic img:hover {
+  transform: translateY(-10%);
+}
+
+@media (max-width: 1180px) {
+  .listingCards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 390px 390px 290px;
+    gap: 10%;
+  }
+}
+

@@ -1,7 +1,20 @@
 .DashCharts {
-	display: grid;
-	width: 100%;
-	margin: 0 auto;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px;
+  display: grid;
+  margin: 0 auto;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  height: 250px;
+  gap: 5%;
+  /* padding: 25px; */
+  /* justify-content: space-around; */
+}
+
+@media (max-width: 1280px) {
+  .DashCharts {
+    grid-template-columns: 1fr;
+    grid-template-rows: 290px 290px;
+	height: 650px;
+
+  }
 }

@@ -17,7 +17,6 @@ const Navbar = () => {
 
   const handClick = () => {
     setToggle(!toggle);
-    "---->", toggle;
   };
 
   return (

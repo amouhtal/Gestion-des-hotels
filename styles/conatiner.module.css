@@ -33,9 +33,10 @@
 }
 
 .settings{
+    display: flex;
+    
     cursor: pointer;
     position: fixed;
-    display: flex;
     align-items: center;
     justify-content: center;
     color: gray;
@@ -56,8 +57,8 @@
 }
 
 .dropdownMenu{
+    display: none;
     position: fixed;
-    display: flex;
     flex-direction: column;
     align-items: center;
     right: 65px;

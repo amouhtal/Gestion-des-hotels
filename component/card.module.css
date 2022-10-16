@@ -10,15 +10,6 @@
 
 }
 
-.card:after{
-  display: block;
-  content: '';
-  width: 90%;
-  margin: 0 5%;
-  border-top: 0.02px solid rgb(120, 120, 126);
-  background-color: aliceblue;
-}
-
 .logo {
     width: 75px;
     height: 75px;
@@ -58,7 +49,7 @@
   line-height: 1;
 }
 .card::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 40px;
   left: 10%;

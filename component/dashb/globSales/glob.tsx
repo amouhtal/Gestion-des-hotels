@@ -85,7 +85,7 @@ const Glob = () => {
           <div
             className={styles.zoomIn}
             onClick={() => {
-              setScale((curr) => curr + 0.3);
+              setScale((curr) => curr + 0.5);
             }}
           >
             +

@@ -31,46 +31,90 @@ const Map = ({ scale }: { scale: number }) => {
     let index = Regions.findIndex((region) => {
       return region.id == currentId.toString();
     });
-    // (
-    //   // document.addEventListener("DOMContentLoaded", function(event) {
-    //   //Your code
-    //   e.target.id
-    // );
-
     currentRegion = Regions[index].region.toString();
     setRegion(currentRegion);
     setDiv(true);
-    // });
   };
+
   const divRef = useRef<HTMLDivElement>(null);
+
+  let [isDown, setDown] = useState<boolean>(false);
+
+  let [startX, setstartX] = useState<number>(0);
+  let [startY, setstartY] = useState<number>(0);
+
+  let [scrollLeft, setscrolLeft] = useState<number>(0);
+  let [scrollTop, setscrollTop] = useState<number>(0);
+
+  const mouseDown = (e: any) => {
+    setDown(true);
+    if (divRef.current) {
+    //   e.preventDefault();
+
+      setstartX(e.pageX - divRef.current?.offsetLeft);
+      setscrolLeft(divRef.current?.offsetLeft);
+
+      setstartY(e.pageY - divRef.current?.offsetTop);
+      //   setscrollTop(divRef.current?.offsetTop);
+    }
+  };
+
+  const mouseLeave = () => {
+    // setstartX(0);
+    // setstartY(0);
+
+    setDown(false);
+  };
+
+  const mouseUp = () => {
+    // setstartX(0);
+    // setstartY(0);
+    setDown(false);
+  };
+
+  const mouseMove = (e: any) => {
+    if (!isDown) return;
+    if (divRef.current) {
+      e.preventDefault();
+      const x = e.pageX - divRef.current?.offsetLeft;
+      const y: number = e.pageY - divRef.current?.offsetTop;
+
+      const walkX = x - startX;
+      const walkY = y - startY;
+
+      divRef.current.scrollLeft = scrollLeft - walkX;
+      divRef.current.scrollTop = scrollTop - walkY;
+    }
+  };
 
   return (
     <>
       <div
+        className={styles.mapBack}
         ref={divRef}
-        style={{
-          position: "absolute",
-          top: "0",
-          left: "0",
-          height: "100%",
-          width: "100%",
+        onMouseUp={() => {
+          mouseUp();
+        }}
+        onMouseLeave={() => {
+          mouseLeave();
+        }}
+        onMouseDown={(e) => {
+          mouseDown(e);
+        }}
+        onMouseMove={(e) => {
+          mouseMove(e);
         }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           className={styles.svgF}
-          transform={`scale(${scale})  translate(50%, 50%`}
-          height={`${Number(divRef.current?.clientHeight) * scale}px`}
-          width={`${Number(divRef.current?.clientWidth) * scale}px`}
-          // overflow={"scroll"}
-          // transform={`translate(${155 * scale}, ${0.5 * scale})`}
+          transform={`scale(${scale}) `}
         >
-          {/* <g transform={`scale(${scale}) `} width="100%" height="100%"> */}
           <path
             onMouseEnter={(e) => showDiv(e)}
             onMouseLeave={() => setDiv(false)}
-            transform={`scale(${0.5} ${0.5})`}
+            transform={`scale(${scale})`}
             d="m 444.9853,0.47393 0.15,0.46 0.45,-0.01 0.28,1.31 1.38,0.42 -0.47,2.17 0.73,5.4 0.57,1.35 1.74,-0.12 -0.4,1.07 0.56,2.81 1.17,2.52 0.52,-0.1 0.32,0.54 0.63,-0.13 1.02,0.46 0.77,1.27 1.79,1.28 0.95,1.91 0.07,0.24 0.63,1.11 1.21,0.35 0.52,-0.19 3.37,3.94 1.16,0.62 1.14,0.15 1.32,1.54 1.44,0.84 0.46,0.58 3.81,1.54 1.26,-0.45 0.7,0.89 0.65,0.27 0.95,-0.12 2.59,0.78 1.14,-0.06 1.45,0.69 0,0 -1.09,1.26 -0.17,1.35 0.66,0.69 0.18,2.36 -0.93,2.41 -2.54,1.66 -3.84,0.68 -4.02,3.51 -0.83,0.04 -0.63,0.51 -0.75,1.3 -0.81,0.12 -1.49,0.77 -1.15,-0.05 -2.81,0.74 -1.01,-0.32 -0.63,0.42 -0.89,0 -2.48,1.17 -1.13,1.3 0,0 -2.59,-0.68 -3.25,1.39 -4.14,-0.87 -1.86,-1.07 -1.51,-2.41 -1.11,-0.59 -0.53,-0.79 -0.27,-0.09 -1.23,0.88 -1.27,-0.26 -1.62,0.07 -0.65,-0.43 -1.36,-2.03 -1.45,-0.68 -0.73,-0.82 -1.7,-0.25 -0.85,-0.99 -2.08,-0.17 -2.3,-0.9 -5.26,-0.95 -2.53,0.15 -3.63,-0.35 0,0 3.05,-9.56 0.52,-0.21 0.41,-0.69 2.43,-8.46 0.75,-1.26 0.39,-1.5 0.87,-0.81 0.89,-2.52 0.19,-1.76 0.23,-0.44 0.96,-4.72 1.27,-4.57 0.23,-0.06 -0.02,-0.63 0.86,-0.62 1.65,0.23 0.67,-0.21 1.6,0.61 0.01,0.34 0.92,0.19 1.11,-1.05 0.03,-0.91 1.02,-0.25 0.14,-0.35 0.46,0.1 0.75,-0.47 1.31,0.61 0.85,-0.43 1.1,0.26 0.67,-0.21 0.82,-0.67 0.08,0.23 0.31,-0.08 1.72,-1.93 0.51,-0.06 0.4,-0.97 0.24,0.21 0.42,-0.48 0.35,0 0.52,0.51 0.16,-0.29 0.92,-0.03 0.48,-0.5 z"
             id="MA-01"
             name=""
@@ -186,7 +230,7 @@ const Map = ({ scale }: { scale: number }) => {
           {/* </g> */}
         </svg>
       </div>
-      {ddiv && <div className={styles.region}>{region}</div>}
+      {/* {ddiv && <div className={styles.region}>{region}</div>} */}
     </>
   );
 };

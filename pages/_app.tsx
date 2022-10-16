@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [Rt_Bg_Clr, setRt_Bg_Clr] = useAtom(leftBarBackColot);
 
   const settingRef = useRef<HTMLHeadingElement>(null);
-  const [clicked, setClicked] = useState<Boolean>(false);
+  const [clicked, setClicked] = useState<Boolean>(true);
   function ShowSettingd() {
     let elmnt;
     if (null !== settingRef.current) {

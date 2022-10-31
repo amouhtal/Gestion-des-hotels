@@ -128,3 +128,20 @@
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
 }
+
+
+/* Drop down list regions customSelect */
+
+/* The container must be positioned relative: */
+.customSelect {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0!important;
+  /* background: #5c6664; */
+  background-image: none;
+}
+
